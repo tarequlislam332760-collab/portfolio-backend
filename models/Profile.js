@@ -1,0 +1,22 @@
+const mongoose = require('mongoose');
+
+const ProfileSchema = new mongoose.Schema({
+  name:      { type: String, default: 'Tarikul Islam Tarek' },
+  title:     { type: String, default: 'MERN Full Stack Developer' },
+  subtitle:  { type: String, default: 'Digital Marketing Specialist' },
+  bio:       { type: String, default: 'I build high-performance MERN stack web apps.' },
+  bio2:      { type: String, default: 'Deployed projects on Vercel.' },
+  email:     { type: String, default: 'tareq.islam.dev@gmail.com' },
+  phone:     { type: String, default: '+880 1732-483149' },
+  location:  { type: String, default: 'Sylhet, Bangladesh' },
+  available: { type: Boolean, default: true },
+  github:    { type: String, default: 'https://github.com/tarequlislam332760-collab' },
+  linkedin:  { type: String, default: 'https://www.linkedin.com/in/tareq-islam3149/' },
+  facebook:  { type: String, default: 'https://www.facebook.com/profile.php?id=61585040426028' },
+  instagram: { type: String, default: 'https://www.instagram.com/tareq23337/' },
+  whatsapp:  { type: String, default: 'https://wa.me/8801732483149' },
+  cvLink:    { type: String, default: '#' },
+  image:     { type: String, default: '' },
+}, { timestamps: true });
+
+module.exports = mongoose.model('Profile', ProfileSchema);
