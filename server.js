@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: ['http://localhost:5173','http://localhost:5174','https://tarek.dev'],
+  origin: ['http://localhost:5173','http://localhost:5174','https://tarek.dev','https://portfolio-frontend-pi-green.vercel.app'],
   credentials: true,
 }));
 app.use(express.json({ limit: '10mb' }));
