@@ -6,13 +6,20 @@ const { protect } = require('../middleware/authMiddleware');
 router.post('/', protect, async (req, res) => {
   try {
     const { image } = req.body;
+    if (!image) {
+      return res.status(400).json({ success: false, message: 'No image provided' });
+    }
 
     const result = await cloudinary.uploader.upload(image, {
       folder: 'portfolio',
       transformation: [{ width: 800, height: 1000, crop: 'fill', gravity: 'face' }],
     });
 
-    res.json({ success: true, url: result.secure_url, public_id: result.public_id });
+    res.json({
+      success: true,
+      url: result.secure_url,
+      public_id: result.public_id,
+    });
   } catch (err) {
     res.status(500).json({ success: false, message: err.message });
   }
