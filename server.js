@@ -25,6 +25,7 @@ app.use('/api/messages',     require('./routes/messageRoutes'));
 app.use('/api/testimonials', require('./routes/testimonialRoutes'));
 app.use('/api/skills',       require('./routes/skillRoutes'));
 app.use('/api/profile',      require('./routes/profileRoutes'));
+app.use('/api/services', require('./routes/serviceRoutes'));
 app.use('/api/upload', require('./routes/uploadRoutes'));
 app.use('/api/analytics',    require('./routes/analyticsRoutes'));
 
